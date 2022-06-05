@@ -72,5 +72,10 @@ public class PawnPiece implements Piece{
 
     }
 
+    @Override
+    public String toString() {
+        return "Pawn of color: " + (color == Color.white ? "White" : "Black") ;
+    }
+
 
 }

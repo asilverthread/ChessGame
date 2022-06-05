@@ -8,7 +8,10 @@ public class ChessBoardUI {
     private JPanel mainPanel;
 
     public ChessBoardUI() {
-        prepareGUI();
+    }
+
+    public ChessBoardUI(ChessBoard board) {
+        prepareGUI(board);
     }
 
     private void prepareGUI() {
@@ -18,8 +21,9 @@ public class ChessBoardUI {
         mainFrame.setLayout(new GridLayout(1, 1));
         mainFrame.setVisible(true);
         //main panel setup
-        JPanel mainPanel = new JPanel(new GridLayout(8,8));
+        mainPanel = new JPanel(new GridLayout(8,8));
 
+        /*
         int row = 1;
         for (int i = 1; i < 65; i++) {
             JLabel borderLabel = new JLabel();
@@ -46,6 +50,22 @@ public class ChessBoardUI {
                 mainPanel.add(borderLabel);
             } else {
                 mainPanel.add(new PawnPiece("NotWhite").getPiece());
+            }
+        }
+
+        mainFrame.add(mainPanel);
+
+
+         */
+    }
+
+    private void prepareGUI(ChessBoard board) {
+        prepareGUI();
+
+        for (Space s: board.getSpaces()) {
+            if (s.getPiece() != null) {
+                JLabel j = s.getPiece().getPiece();
+                mainPanel.add(j);
             }
         }
 
