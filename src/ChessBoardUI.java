@@ -2,12 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class SwingDemo {
+public class ChessBoardUI {
     private JFrame mainFrame;
     private JLabel header;
     private JPanel mainPanel;
 
-    public SwingDemo() {
+    public ChessBoardUI() {
         prepareGUI();
     }
 
@@ -42,7 +42,11 @@ public class SwingDemo {
             }
 
             borderLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            mainPanel.add(borderLabel);
+            if (i != 64) {
+                mainPanel.add(borderLabel);
+            } else {
+                mainPanel.add(new PawnPiece("NotWhite").getPiece());
+            }
         }
 
         mainFrame.add(mainPanel);

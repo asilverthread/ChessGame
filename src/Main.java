@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        SwingDemo monkey = new SwingDemo();
+        ChessBoardUI monkey = new ChessBoardUI();
     }
 }
